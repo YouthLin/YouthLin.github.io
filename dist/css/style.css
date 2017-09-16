@@ -1,0 +1,15 @@
+.blog-header {
+    padding-top: 58px;
+}
+
+.carousel-caption {
+    background-color: rgba(255, 255, 255, .5);
+    color: #000;
+}
+
+.carousel-item, .carousel-item img {
+    height: 100%;
+}
+.carousel-indicators li{
+    cursor: pointer;
+}
