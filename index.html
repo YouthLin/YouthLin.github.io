@@ -119,8 +119,12 @@
                             <th>品种</th>
                             <td>纽荷尔</td>
                             <th>单价</th>
-                            <td>100元/20斤/箱 + 邮费
-                                <a class="btn btn-primary btn-xs" data-toggle="collapse" href="#collapseExample"
+                            <td>
+                                <div class="pull-left">
+                                    100元/20斤/箱 + 邮费 <br>
+                                    &nbsp;&nbsp;55元/10斤/箱 + 邮费
+                                </div>
+                                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample"
                                    aria-expanded="false" aria-controls="collapseExample">查看邮费 </a>
                             </td>
                         </tr>
@@ -131,24 +135,24 @@
 
             <div class="collapse" id="collapseExample">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active">
+                    <li role="presentation">
                         <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">邮费(按省份)</a></li>
-                    <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab"
-                                               data-toggle="tab">邮费(邮政)</a>
+                    <li role="presentation" class="active">
+                        <a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">邮费(邮政)</a>
                     </li>
-                    <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab"
-                                               data-toggle="tab">邮费(圆通)</a>
+                    <li role="presentation">
+                        <a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">邮费(圆通)</a>
                     </li>
-                    <li role="presentation"><a href="#tab4" aria-controls="tab4" role="tab"
-                                               data-toggle="tab">邮费(韵达)</a>
+                    <li role="presentation">
+                        <a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">邮费(韵达)</a>
                     </li>
-                    <li role="presentation"><a href="#tab5" aria-controls="tab5" role="tab"
-                                               data-toggle="tab">邮费(顺丰)</a>
+                    <li role="presentation">
+                        <a href="#tab5" aria-controls="tab5" role="tab" data-toggle="tab">邮费(顺丰)</a>
                     </li>
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="tab1">
+                    <div role="tabpanel" class="tab-pane" id="tab1">
                         <div class="table-responsive">
                             <table class="table table-hover table-bordered no-margin">
                                 <thead>
@@ -431,7 +435,7 @@
                             </table>
                         </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane" id="tab2">
+                    <div role="tabpanel" class="tab-pane active" id="tab2">
                         <div class="table-responsive">
                             <table class="table table-hover table-bordered no-margin ">
                                 <thead>
