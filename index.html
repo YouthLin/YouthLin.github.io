@@ -9,6 +9,7 @@
     <meta name="description" content="正宗赣南信丰脐橙,20斤每箱仅售100元！欢迎选购">
     <meta name="author" content="Youth．霖">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://cdn.bootcss.com/jquery.swipebox/1.4.4/css/swipebox.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -52,6 +53,18 @@
 
         .ud:hover {
             background: #ccc;
+        }
+
+        .yz {
+            color: #eee;
+        }
+
+        .note {
+            color: #000;
+        }
+
+        #swipebox-overlay {
+            background: rgba(0, 0, 0, .8);
         }
     </style>
 </head>
@@ -121,8 +134,8 @@
                             <th>单价</th>
                             <td>
                                 <div class="pull-left">
-                                    100元/20斤/箱 + 邮费 <br>
-                                    &nbsp;&nbsp;55元/10斤/箱 + 邮费
+                                    109元/20斤/箱 + 邮费 <br>
+                                    &nbsp;&nbsp;59元/10斤/箱 + 邮费
                                 </div>
 
                             </td>
@@ -139,9 +152,9 @@
 
             <div class="collapse" id="collapseExample">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation">
-                        <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">邮费(按省份)</a></li>
                     <li role="presentation" class="active">
+                        <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">邮费(按省份)</a></li>
+                    <li role="presentation">
                         <a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">邮费(邮政)</a>
                     </li>
                     <li role="presentation">
@@ -156,275 +169,273 @@
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane" id="tab1">
+                    <div role="tabpanel" class="tab-pane active" id="tab1">
                         <div class="table-responsive">
                             <table class="table table-hover table-bordered table-striped no-margin">
                                 <thead>
                                 <tr>
-                                    <th rowspan="2">寄达地</th>
-                                    <th colspan="2">邮政</th>
-                                    <th colspan="2">圆通</th>
-                                    <th colspan="2">韵达</th>
-                                    <th colspan="2">顺丰</th>
+                                    <th rowspan="2" class="to">寄达地</th>
+                                    <th colspan="2" class="yz">邮政<span class="note">(暂停收寄)</span></th>
+                                    <th colspan="2" class="yt">圆通</th>
+                                    <th colspan="2" class="yd">韵达</th>
+                                    <th colspan="2" class="sf">顺丰</th>
                                 </tr>
                                 <tr>
-                                    <th>10斤</th>
-                                    <th>20斤</th>
-                                    <th>10斤</th>
-                                    <th>20斤</th>
-                                    <th>10斤</th>
-                                    <th>20斤</th>
-                                    <th>10斤</th>
-                                    <th>20斤</th>
+                                    <th class="yz">10斤</th>
+                                    <th class="yz">20斤</th>
+                                    <th class="yt">10斤</th>
+                                    <th class="yt">20斤</th>
+                                    <th class="yd">10斤</th>
+                                    <th class="yd">20斤</th>
+                                    <th class="sf">10斤</th>
+                                    <th class="sf">20斤</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>江西、广东</td>
-                                    <td>9</td>
-                                    <td>15</td>
-                                    <td>14</td>
-                                    <td>21</td>
-                                    <td>13</td>
-                                    <td>20</td>
-                                    <td>14</td>
-                                    <td>20</td>
+                                    <td class="to">江西、广东</td>
+                                    <td class="yz">9</td>
+                                    <td class="yz">15</td>
+                                    <td class="yt">14</td>
+                                    <td class="yt">21</td>
+                                    <td class="yd">13</td>
+                                    <td class="yd">20</td>
+                                    <td class="sf">14</td>
+                                    <td class="sf">20</td>
                                 </tr>
                                 <tr>
-                                    <td>江苏、浙江、上海、安徽</td>
-                                    <td>10</td>
-                                    <td>16</td>
-                                    <td>14</td>
-                                    <td>21</td>
-                                    <td>13</td>
-                                    <td>20</td>
-                                    <td>14</td>
-                                    <td>22</td>
+                                    <td class="to">江苏、浙江、上海、安徽</td>
+                                    <td class="yz">10</td>
+                                    <td class="yz">16</td>
+                                    <td class="yt">14</td>
+                                    <td class="yt">21</td>
+                                    <td class="yd">13</td>
+                                    <td class="yd">20</td>
+                                    <td class="sf">14</td>
+                                    <td class="sf">22</td>
                                 </tr>
                                 <tr>
-                                    <td>福建</td>
-                                    <td>10</td>
-                                    <td>16</td>
-                                    <td>14</td>
-                                    <td>21</td>
-                                    <td>16</td>
-                                    <td>24</td>
-                                    <td>14</td>
-                                    <td>22</td>
+                                    <td class="to">福建</td>
+                                    <td class="yz">10</td>
+                                    <td class="yz">16</td>
+                                    <td class="yt">14</td>
+                                    <td class="yt">21</td>
+                                    <td class="yd">16</td>
+                                    <td class="yd">24</td>
+                                    <td class="sf">14</td>
+                                    <td class="sf">22</td>
                                 </tr>
                                 <tr>
-                                    <td>湖南、湖北</td>
-                                    <td>10</td>
-                                    <td>16</td>
-                                    <td>14</td>
-                                    <td>21</td>
-                                    <td>13</td>
-                                    <td>20</td>
-                                    <td>14</td>
-                                    <td>22</td>
+                                    <td class="to">湖南、湖北</td>
+                                    <td class="yz">10</td>
+                                    <td class="yz">16</td>
+                                    <td class="yt">14</td>
+                                    <td class="yt">21</td>
+                                    <td class="yd">13</td>
+                                    <td class="yd">20</td>
+                                    <td class="sf">14</td>
+                                    <td class="sf">22</td>
                                 </tr>
                                 <tr>
-                                    <td>河南</td>
-                                    <td>17</td>
-                                    <td>27</td>
-                                    <td>17</td>
-                                    <td>36</td>
-                                    <td>16</td>
-                                    <td>24</td>
-                                    <td>17</td>
-                                    <td>27</td>
+                                    <td class="to">河南</td>
+                                    <td class="yz">17</td>
+                                    <td class="yz">27</td>
+                                    <td class="yt">17</td>
+                                    <td class="yt">36</td>
+                                    <td class="yd">16</td>
+                                    <td class="yd">24</td>
+                                    <td class="sf">17</td>
+                                    <td class="sf">27</td>
                                 </tr>
                                 <tr>
-                                    <td>河北</td>
-                                    <td>17</td>
-                                    <td>27</td>
-                                    <td>17</td>
-                                    <td>36</td>
-                                    <td>25</td>
-                                    <td>38</td>
-                                    <td>17</td>
-                                    <td>27</td>
+                                    <td class="to">河北</td>
+                                    <td class="yz">17</td>
+                                    <td class="yz">27</td>
+                                    <td class="yt">17</td>
+                                    <td class="yt">36</td>
+                                    <td class="yd">25</td>
+                                    <td class="yd">38</td>
+                                    <td class="sf">17</td>
+                                    <td class="sf">27</td>
                                 </tr>
                                 <tr>
-                                    <td>北京</td>
-                                    <td>17</td>
-                                    <td>27</td>
-                                    <td>17</td>
-                                    <td>36</td>
-                                    <td>26</td>
-                                    <td>42</td>
-                                    <td>17</td>
-                                    <td>27</td>
+                                    <td class="to">北京</td>
+                                    <td class="yz">17</td>
+                                    <td class="yz">27</td>
+                                    <td class="yt">17</td>
+                                    <td class="yt">36</td>
+                                    <td class="yd">26</td>
+                                    <td class="yd">42</td>
+                                    <td class="sf">17</td>
+                                    <td class="sf">27</td>
                                 </tr>
                                 <tr>
-                                    <td>天津、山东</td>
-                                    <td>17</td>
-                                    <td>27</td>
-                                    <td>17</td>
-                                    <td>36</td>
-                                    <td>18</td>
-                                    <td>28</td>
-                                    <td>17</td>
-                                    <td>27
-                                    </td>
+                                    <td class="to">天津、山东</td>
+                                    <td class="yz">17</td>
+                                    <td class="yz">27</td>
+                                    <td class="yt">17</td>
+                                    <td class="yt">36</td>
+                                    <td class="yd">18</td>
+                                    <td class="yd">28</td>
+                                    <td class="sf">17</td>
+                                    <td class="sf">27</td>
                                 </tr>
                                 <tr>
-                                    <td>山西</td>
-                                    <td>17</td>
-                                    <td>27</td>
-                                    <td>20</td>
-                                    <td>55</td>
-                                    <td>36 *</td>
-                                    <td>60 *</td>
-                                    <td>25</td>
-                                    <td>45</td>
+                                    <td class="to">山西</td>
+                                    <td class="yz">17</td>
+                                    <td class="yz">27</td>
+                                    <td class="yt">20</td>
+                                    <td class="yt">55</td>
+                                    <td class="yd">36 *</td>
+                                    <td class="yd">60 *</td>
+                                    <td class="sf">25</td>
+                                    <td class="sf">45</td>
                                 </tr>
                                 <tr>
-                                    <td>广西</td>
-                                    <td>20</td>
-                                    <td>38</td>
-                                    <td>20</td>
-                                    <td>55</td>
-                                    <td>25</td>
-                                    <td>38</td>
-                                    <td>22</td>
-                                    <td>37
-                                    </td>
+                                    <td class="to">广西</td>
+                                    <td class="yz">20</td>
+                                    <td class="yz">38</td>
+                                    <td class="yt">20</td>
+                                    <td class="yt">55</td>
+                                    <td class="yd">25</td>
+                                    <td class="yd">38</td>
+                                    <td class="sf">22</td>
+                                    <td class="sf">37</td>
                                 </tr>
                                 <tr>
-                                    <td>海南</td>
-                                    <td>20</td>
-                                    <td>38</td>
-                                    <td>20</td>
-                                    <td>70</td>
-                                    <td>45 *</td>
-                                    <td>70 *</td>
-                                    <td>27</td>
-                                    <td>47</td>
+                                    <td class="to">海南</td>
+                                    <td class="yz">20</td>
+                                    <td class="yz">38</td>
+                                    <td class="yt">20</td>
+                                    <td class="yt">70</td>
+                                    <td class="yd">45 *</td>
+                                    <td class="yd">70 *</td>
+                                    <td class="sf">27</td>
+                                    <td class="sf">47</td>
                                 </tr>
                                 <tr>
-                                    <td>陕西</td>
-                                    <td>20</td>
-                                    <td>38</td>
-                                    <td>20</td>
-                                    <td>55</td>
-                                    <td>25</td>
-                                    <td>38</td>
-                                    <td>24</td>
-                                    <td>44</td>
+                                    <td class="to">陕西</td>
+                                    <td class="yz">20</td>
+                                    <td class="yz">38</td>
+                                    <td class="yt">20</td>
+                                    <td class="yt">55</td>
+                                    <td class="yd">25</td>
+                                    <td class="yd">38</td>
+                                    <td class="sf">24</td>
+                                    <td class="sf">44</td>
                                 </tr>
                                 <tr>
-                                    <td>四川、重庆</td>
-                                    <td>20</td>
-                                    <td>38</td>
-                                    <td>20</td>
-                                    <td>55</td>
-                                    <td>25</td>
-                                    <td>38</td>
-                                    <td>21</td>
-                                    <td>36</td>
+                                    <td class="to">四川、重庆</td>
+                                    <td class="yz">20</td>
+                                    <td class="yz">38</td>
+                                    <td class="yt">20</td>
+                                    <td class="yt">55</td>
+                                    <td class="yd">25</td>
+                                    <td class="yd">38</td>
+                                    <td class="sf">21</td>
+                                    <td class="sf">36</td>
                                 </tr>
                                 <tr>
-                                    <td>云南</td>
-                                    <td>20</td>
-                                    <td>38</td>
-                                    <td>20</td>
-                                    <td>70</td>
-                                    <td>40 *</td>
-                                    <td>65 *</td>
-                                    <td>24</td>
-                                    <td>22</td>
+                                    <td class="to">云南</td>
+                                    <td class="yz">20</td>
+                                    <td class="yz">38</td>
+                                    <td class="yt">20</td>
+                                    <td class="yt">70</td>
+                                    <td class="yd">40 *</td>
+                                    <td class="yd">65 *</td>
+                                    <td class="sf">24</td>
+                                    <td class="sf">22</td>
                                 </tr>
                                 <tr>
-                                    <td>贵州</td>
-                                    <td>20</td>
-                                    <td>38</td>
-                                    <td>20</td>
-                                    <td>55</td>
-                                    <td>25</td>
-                                    <td>38</td>
-                                    <td>21</td>
-                                    <td>36</td>
+                                    <td class="to">贵州</td>
+                                    <td class="yz">20</td>
+                                    <td class="yz">38</td>
+                                    <td class="yt">20</td>
+                                    <td class="yt">55</td>
+                                    <td class="yd">25</td>
+                                    <td class="yd">38</td>
+                                    <td class="sf">21</td>
+                                    <td class="sf">36</td>
                                 </tr>
                                 <tr>
-                                    <td>辽宁、吉林、黑龙江</td>
-                                    <td>30</td>
-                                    <td>48</td>
-                                    <td>20</td>
-                                    <td>70</td>
-                                    <td>40</td>
-                                    <td>55</td>
-                                    <td>26</td>
-                                    <td>46</td>
+                                    <td class="to">辽宁、吉林、黑龙江</td>
+                                    <td class="yz">30</td>
+                                    <td class="yz">48</td>
+                                    <td class="yt">20</td>
+                                    <td class="yt">70</td>
+                                    <td class="yd">40</td>
+                                    <td class="yd">55</td>
+                                    <td class="sf">26</td>
+                                    <td class="sf">46</td>
                                 </tr>
                                 <tr>
-                                    <td>内蒙</td>
-                                    <td>30</td>
-                                    <td>48</td>
-                                    <td>100</td>
-                                    <td>250</td>
-                                    <td>45</td>
-                                    <td>70</td>
-                                    <td>47</td>
-                                    <td>82</td>
+                                    <td class="to">内蒙</td>
+                                    <td class="yz">30</td>
+                                    <td class="yz">48</td>
+                                    <td class="yt">100</td>
+                                    <td class="yt">250</td>
+                                    <td class="yd">45</td>
+                                    <td class="yd">70</td>
+                                    <td class="sf">47</td>
+                                    <td class="sf">82</td>
                                 </tr>
                                 <tr>
-                                    <td>甘肃</td>
-                                    <td>30</td>
-                                    <td>48</td>
-                                    <td>80</td>
-                                    <td>150</td>
-                                    <td>48</td>
-                                    <td>36</td>
-                                    <td>43</td>
-                                    <td>73</td>
+                                    <td class="to">甘肃</td>
+                                    <td class="yz">30</td>
+                                    <td class="yz">48</td>
+                                    <td class="yt">80</td>
+                                    <td class="yt">150</td>
+                                    <td class="yd">48</td>
+                                    <td class="yd">36</td>
+                                    <td class="sf">43</td>
+                                    <td class="sf">73</td>
                                 </tr>
                                 <tr>
-                                    <td>宁夏</td>
-                                    <td>30</td>
-                                    <td>48</td>
-                                    <td>80</td>
-                                    <td>150</td>
-                                    <td>48</td>
-                                    <td>60</td>
-                                    <td>36</td>
-                                    <td>66</td>
+                                    <td class="to">宁夏</td>
+                                    <td class="yz">30</td>
+                                    <td class="yz">48</td>
+                                    <td class="yt">80</td>
+                                    <td class="yt">150</td>
+                                    <td class="yd">48</td>
+                                    <td class="yd">60</td>
+                                    <td class="sf">36</td>
+                                    <td class="sf">66</td>
                                 </tr>
                                 <tr>
-                                    <td>新疆</td>
-                                    <td>68</td>
-                                    <td>128</td>
-                                    <td>100</td>
-                                    <td>250</td>
-                                    <td>120 *</td>
-                                    <td>240 *</td>
-                                    <td>61</td>
-                                    <td>111</td>
+                                    <td class="to">新疆</td>
+                                    <td class="yz">68</td>
+                                    <td class="yz">128</td>
+                                    <td class="yt">100</td>
+                                    <td class="yt">250</td>
+                                    <td class="yd">120 *</td>
+                                    <td class="yd">240 *</td>
+                                    <td class="sf">61</td>
+                                    <td class="sf">111</td>
                                 </tr>
                                 <tr>
-                                    <td>青海</td>
-                                    <td>68</td>
-                                    <td>128</td>
-                                    <td>80</td>
-                                    <td>150</td>
-                                    <td>48</td>
-                                    <td>60</td>
-                                    <td>43</td>
-                                    <td>73</td>
+                                    <td class="to">青海</td>
+                                    <td class="yz">68</td>
+                                    <td class="yz">128</td>
+                                    <td class="yt">80</td>
+                                    <td class="yt">150</td>
+                                    <td class="yd">48</td>
+                                    <td class="yd">60</td>
+                                    <td class="sf">43</td>
+                                    <td class="sf">73</td>
                                 </tr>
                                 <tr>
-                                    <td>西藏</td>
-                                    <td>68</td>
-                                    <td>128</td>
-                                    <td>100</td>
-                                    <td>250</td>
-                                    <td>120 *</td>
-                                    <td>240 *</td>
-                                    <td>111</td>
-                                    <td>216</td>
+                                    <td class="to">西藏</td>
+                                    <td class="yz">68</td>
+                                    <td class="yz">128</td>
+                                    <td class="yt">100</td>
+                                    <td class="yt">250</td>
+                                    <td class="yd">120 *</td>
+                                    <td class="yd">240 *</td>
+                                    <td class="sf">111</td>
+                                    <td class="sf">216</td>
                                 </tr>
                                 <tr>
-                                    <td>港澳台、海外 (暂不支持)</td>
+                                    <td class="to">港澳台、海外 (暂不支持)</td>
                                     <td colspan="8">-</td>
                                 </tr>
                                 </tbody>
@@ -439,12 +450,12 @@
                             </table>
                         </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane active" id="tab2">
+                    <div role="tabpanel" class="tab-pane" id="tab2">
                         <div class="table-responsive">
-                            <table class="table table-hover table-bordered table-striped no-margin ">
+                            <table class="yz table table-hover table-bordered table-striped no-margin ">
                                 <thead>
                                 <tr>
-                                    <th>寄达地</th>
+                                    <th>寄达地(邮政)<span class="note">(由于双十一影响,暂停收寄)</span></th>
                                     <th>10 斤</th>
                                     <th>20 斤</th>
                                 </tr>
@@ -499,10 +510,10 @@
                     </div>
                     <div role="tabpanel" class="tab-pane" id="tab3">
                         <div class="table-responsive ">
-                            <table class="table table-hover table-bordered table-striped no-margin">
+                            <table class="yt table table-hover table-bordered table-striped no-margin">
                                 <thead>
                                 <tr>
-                                    <th>寄达地</th>
+                                    <th>寄达地(圆通)</th>
                                     <th>10 斤</th>
                                     <th>20 斤</th>
                                 </tr>
@@ -557,10 +568,10 @@
                     </div>
                     <div role="tabpanel" class="tab-pane" id="tab4">
                         <div class="table-responsive">
-                            <table class="table table-hover table-bordered table-striped no-margin">
+                            <table class="yd table table-hover table-bordered table-striped no-margin">
                                 <thead>
                                 <tr>
-                                    <th>寄达地</th>
+                                    <th>寄达地(韵达)</th>
                                     <th>10 斤</th>
                                     <th>20 斤</th>
                                 </tr>
@@ -641,10 +652,10 @@
                     </div>
                     <div role="tabpanel" class="tab-pane" id="tab5">
                         <div class="table-responsive">
-                            <table class="table table-hover table-bordered table-striped no-margin">
+                            <table class="sf table table-hover table-bordered table-striped no-margin">
                                 <thead>
                                 <tr>
-                                    <th>寄达地</th>
+                                    <th>寄达地(顺丰)</th>
                                     <th>10 斤</th>
                                     <th>20 斤</th>
                                 </tr>
@@ -787,7 +798,8 @@
         <ul class="media-list">
             <li class="media">
                 <div class="media-left">
-                    <a href="https://wx2.sinaimg.cn/large/be3d86b9ly1fl58h0fdevj206g06g0sp.jpg" target="_blank">
+                    <a href="https://wx2.sinaimg.cn/large/be3d86b9ly1fl58h0fdevj206g06g0sp.jpg" target="_blank"
+                       class="swipebox">
                         <img class="media-object" width="128" height="128"
                              src="https://wx2.sinaimg.cn/mw690/be3d86b9ly1fl58h0fdevj206g06g0sp.jpg" alt="微店二维码">
                     </a>
@@ -799,9 +811,10 @@
             </li>
             <li class="media">
                 <div class="media-left">
-                    <a href="https://ws1.sinaimg.cn/large/be3d86b9gy1flc9u4i1nmj20oa0o4who.jpg" target="_blank">
+                    <a href="https://ws2.sinaimg.cn/large/be3d86b9gy1fli1pjgktrj20o80ny461.jpg" target="_blank"
+                       class="swipebox">
                         <img class="media-object" width="128" height="128"
-                             src="https://ws1.sinaimg.cn/mw690/be3d86b9gy1flc9u4i1nmj20oa0o4who.jpg" alt="微信群二维码">
+                             src="https://ws2.sinaimg.cn/mw690/be3d86b9gy1fli1pjgktrj20o80ny461.jpg" alt="微信群二维码">
                     </a>
                 </div>
                 <div class="media-body">
@@ -811,7 +824,8 @@
             </li>
             <li class="media">
                 <div class="media-left">
-                    <a href="https://ws1.sinaimg.cn/large/be3d86b9gy1flc9oqcuzyj20e80e8mym.jpg" target="_blank">
+                    <a href="https://ws1.sinaimg.cn/large/be3d86b9gy1flc9oqcuzyj20e80e8mym.jpg" target="_blank"
+                       class="swipebox">
                         <img class="media-object" width="128" height="128"
                              src="https://ws1.sinaimg.cn/mw690/be3d86b9gy1flc9oqcuzyj20e80e8mym.jpg" alt="微信二维码">
                     </a>
@@ -841,11 +855,11 @@
         <p>大量精品赣南信丰脐橙，详细请电话联系：<a href="tel:15270688219">15270688219 (陈先生)</a></p>
         售卖正宗赣南信丰脐橙，欢迎前来自选脐橙，也欢迎各位老板前来选果，脐橙园地址：
         <address>江西省赣州市信丰县油山镇长安村迳头围组松山背</address>
-        <div>
+        <!--div>
             <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m11!1m3!1d931.5546894918458!2d114.7191227380257!3d25.400271770580442!2m2!1f0!2f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1szh-CN!2sjp!4v1509720136760"
                     height="450" frameborder="0" style="border:0" allowfullscreen
                     class="col-sm-10 col-sm-offset-1"></iframe>
-        </div>
+        </div-->
     </div>
     <hr>
     <footer style="text-align:center;" id="copyright">
@@ -863,9 +877,12 @@
 </script>
 <script src="js/bootstrap.min.js"></script-->
 <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.swipebox/1.4.4/js/jquery.swipebox.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script>
     jQuery(document).ready(function ($) {
+        $('.swipebox').swipebox();
+
         var $home = $('#home');                  //设置首页 banner 背景
         var $navbar = $('#navbar-collapse');    //可折叠导航头
         var urls = [
