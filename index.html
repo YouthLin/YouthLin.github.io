@@ -59,6 +59,10 @@
             color: #eee;
         }
 
+        td.yt:after, td.yd:after, td.sf:after, .yt td:nth-child(n+2):after, .yd td:nth-child(n+2):after, .sf td:nth-child(n+2):after {
+            content: ' +2';
+        }
+
         .note {
             color: #000;
         }
@@ -165,6 +169,9 @@
                     </li>
                     <li role="presentation">
                         <a href="#tab5" aria-controls="tab5" role="tab" data-toggle="tab">邮费(顺丰)</a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="javascript:;" role="tab">由于脐橙的特殊性 需要加收 2 元打包费</a>
                     </li>
                 </ul>
                 <!-- Tab panes -->
