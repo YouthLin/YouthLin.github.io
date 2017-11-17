@@ -55,16 +55,13 @@
             background: #ccc;
         }
 
-        .yz {
-            color: #eee;
-        }
-
-        td.yt:after, td.yd:after, td.sf:after, .yt td:nth-child(n+2):after, .yd td:nth-child(n+2):after, .sf td:nth-child(n+2):after {
+        td.yz:after, td.yt:after, td.yd:after, td.sf:after, .yz td:nth-child(n+2):after, .yt td:nth-child(n+2):after, .yd td:nth-child(n+2):after, .sf td:nth-child(n+2):after {
             content: ' +2';
         }
 
-        .note {
+        .yz .note {
             color: #000;
+            display: none;
         }
 
         #swipebox-overlay {
@@ -500,8 +497,7 @@
                                 </tr>
                                 <tr>
                                     <td>港澳台、海外 (暂不支持)</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    <td colspan="2">-</td>
                                 </tr>
                                 </tbody>
                                 <tfoot>
