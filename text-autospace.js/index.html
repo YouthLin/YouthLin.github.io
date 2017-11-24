@@ -13,9 +13,11 @@
 <div style="height: 100%;">
     <h1>自动添加空格</h1>
     <div id="editor"></div>
-    <button id="copy" data-clipboard-target="#resutl">复制</button>
-    <div id="result">在上方粘贴或输入文字，在中英文之间自动添加空格后的内容将会在这里显示</div>
-
+    <div class="control">
+        <button id="copy">复制</button>
+        <button id="clear" style="float: right;">清空</button>
+    </div>
+    <div id="result">在上方粘贴或输入文字，在中英文之间自动添加空格后的内容将会在这里显示</div
 </div>
 <script type="text/javascript">
     jQuery(document).ready(function ($) {
@@ -33,6 +35,10 @@
         editor.customConfig.pasteFilterStyle = false;//可粘贴带样式文字
         editor.customConfig.uploadImgShowBase64 = true;// 使用 base64 保存图片
         editor.create();
+        $('#clear').click(function () {
+            editor.txt.clear();
+            editor.change();
+        });
         $('#copy').click(function () {
             $.copy($result);
         });
