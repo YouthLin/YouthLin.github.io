@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MarkDown Preview</title>
+    <!--<link href="https://cdn.bootcss.com/wangEditor/10.0.13/wangEditor.min.css" rel="stylesheet">-->
+    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/wangEditor/10.0.13/wangEditor.min.js"></script>
+    <script type='text/javascript' src='text-autospace.js'></script>
+</head>
+<body>
+<div style="height: 100%;">
+    <h1>自动添加空格</h1>
+    <div id="editor"></div>
+    <button id="copy" data-clipboard-target="#resutl">复制</button>
+    <div id="result">在上方粘贴或输入文字，在中英文之间自动添加空格后的内容将会在这里显示</div>
+
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        var E = window.wangEditor;
+        var editor = new E('#editor');
+        var $result = $('#result');
+        var tip = $result.html();
+        editor.customConfig.onchange = function (html) {
+            if (html === '<p><br></p>') {
+                html = tip;
+            }
+            $result.html(html);
+            autoSpaceAt($result);
+        };
+        editor.customConfig.pasteFilterStyle = false;//可粘贴带样式文字
+        editor.customConfig.uploadImgShowBase64 = true;// 使用 base64 保存图片
+        editor.create();
+        $('#copy').click(function () {
+            $.copy($result);
+        });
+    });
+
+</script>
+</body>
+</html>
