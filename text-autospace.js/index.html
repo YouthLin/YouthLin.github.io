@@ -8,16 +8,89 @@
     <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/wangEditor/10.0.13/wangEditor.min.js"></script>
     <script type='text/javascript' src='text-autospace.js'></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        h1 {
+            margin: 0;
+            padding: .67em 0;
+        }
+
+        #wrap {
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            margin: 0 auto -50px;
+        }
+
+        #end {
+            clear: both;
+            height: 50px;
+        }
+
+        #footer {
+            height: 50px;
+            overflow: hidden;
+            text-align: center;
+            color: #c7c7c7;
+            background-color: rgba(255, 255, 255, .2);
+        }
+
+        blockquote {
+            position: relative;
+            overflow: hidden;
+            margin: 10px 0 10px 0;
+            padding: 15px 10px;
+            background: #f9f9f9;
+            color: #001;
+            border-left: 10px solid #ccc;
+            font-weight: 100;
+            font-size: 14px;
+            line-height: 16px
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        #result {
+            border: 1px dashed #c7c7c7;
+            border-radius: 5px;
+            margin-top: 1em;
+            padding: .5em;
+        }
+    </style>
 </head>
 <body>
-<div style="height: 100%;">
+<div id="wrap">
     <h1>自动添加空格</h1>
     <div id="editor"></div>
     <div class="control">
         <button id="copy">复制</button>
-        <button id="clear" style="float: right;">清空</button>
+        <button id="clear" class="right">清空</button>
     </div>
-    <div id="result">在上方粘贴或输入文字，在中英文之间自动添加空格后的内容将会在这里显示</div>
+    <div id="result"><p>在上方粘贴或输入文字，在中英文之间自动添加空格后的内容将会在这里显示</p></div>
+    <div id="end"></div>
+</div>
+<div id="footer">
+    <blockquote>
+        <span class="left">&copy; 2017</span>
+        <a href="http://css.hanzi.co/" target="_blank">汉字标准格式</a>
+        & <a href="https://github.com/padolsey/findAndReplaceDOMText" target="_blank">findAndReplaceDOMText</a>
+        & <a href="https://github.com/mastermay/text-autospace.js" target="_blank">text-autospace.js@mastermay</a>
+        <a href="https://youthlin.com/" target="_blank" class="right">Powered By Youth．霖</a>
+    </blockquote>
 </div>
 <script type="text/javascript">
     jQuery(document).ready(function ($) {
