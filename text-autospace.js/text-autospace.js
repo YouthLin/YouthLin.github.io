@@ -573,6 +573,9 @@ window.findAndReplaceDOMText = (function () {
     $.extend({
         copy: function (obj) {
             return copyText(obj);
+        },
+        select: function (element) {
+            return selectText(element);
         }
     });
 }(jQuery));
@@ -600,4 +603,20 @@ function copyText(obj) {//https://www.jqueryscript.net/demo/Copy-Text-To-Clipboa
     var res = document.execCommand('copy');
     $temp.remove();
     return res;
+}
+
+//https://segmentfault.com/q/1010000007857595/a-1020000007861123
+function selectText(container) {
+    container = $(container).get()[0];
+    var range;
+    if (document.selection) {
+        range = document.body.createTextRange();
+        range.moveToElementText(container);
+        range.select();
+    } else if (window.getSelection) {
+        range = document.createRange();
+        range.selectNodeContents(container);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+    }
 }

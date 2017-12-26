@@ -77,6 +77,7 @@
     <h1>自动添加空格</h1>
     <div id="editor"></div>
     <div class="control">
+        <button id="process">一键处理输入框内容</button>
         <button id="copy">复制</button>
         <button id="clear" class="right">清空</button>
     </div>
@@ -114,7 +115,12 @@
         });
         $('#copy').click(function () {
             $.copy($result);
+            $.select($('[contenteditable="true"]'));
         });
+        $('#process').click(function () {
+            autoSpaceAt($('#editor'));
+        });
+
     });
 
 </script>
